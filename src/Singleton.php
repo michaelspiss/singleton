@@ -3,6 +3,9 @@
 namespace MichaelSpiss\DesignPatterns;
 
 trait Singleton {
+    /**
+     * @var Singleton $_instance
+     */
     protected static $_instance;
 
     /**
