@@ -4,19 +4,22 @@ namespace MichaelSpiss\DesignPatterns;
 
 trait Singleton {
     /**
-     * @var Singleton $_instance
+     * Associative array: [class_name => instance]
+     * @var array $_instance
      */
     protected static $_instance;
 
     /**
      * Get the Singleton instance.
+     * The class name is needed when the class using the trait is abstract.
      * @return static object using the Singleton trait
      */
     final public static function getInstance() {
-        if(null === self::$_instance) {
-            self::$_instance = new self();
+        $class_name = get_called_class();
+        if(!isset(self::$_instance[$class_name])) {
+            self::$_instance[$class_name] = new $class_name();
         }
-        return self::$_instance;
+        return self::$_instance[$class_name];
     }
 
     /**
