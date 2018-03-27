@@ -42,8 +42,5 @@ There really isn't much left to say, but if you want to know more about [constru
 ## PHP Requirements
 * PHP >= 5.4
 
-## Author
-Michael Spiss: [GitHub](https://github.com/michaelspiss)
-
 ## License
 MIT
